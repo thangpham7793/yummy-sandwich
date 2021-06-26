@@ -1,9 +1,4 @@
-/**
- * @format
- */
-import 'react-native-gesture-handler'
-import {AppRegistry} from 'react-native'
-import App from './src/App'
-import {name as appName} from './app.json'
+// Whichever is imported is run. This is temporary and should decided by env variable
 
-AppRegistry.registerComponent(appName, () => App)
+import StorybookUI from './storybook'
+// import App from './src/App'

@@ -18,4 +18,10 @@
 
 #### :rocket: New Features
 
+- Add `components` package with example `Button` & story
+- Add storybook with sample story & `CentricView` decorator
 - Set up basic routing
+
+#### :arrows_counterclockwise: Refactor
+
+- Refactor entry `index.js` to export either the App or StoryBookUI
