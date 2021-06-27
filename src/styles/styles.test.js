@@ -1,4 +1,4 @@
-import s from './utilityClasses'
+import { s } from './utilityClasses'
 
 describe('Styles: s', () => {
   it('Should aggregate valid util classes into a style object', () => {

@@ -55,7 +55,7 @@ const s = classes => {
     split(' '),
     validateEach,
     map(prop(__, utilitiyClasses)),
-    mergeAll
+    mergeAll,
   )(classes)
 }
 
