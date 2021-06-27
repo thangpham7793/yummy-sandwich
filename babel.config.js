@@ -10,6 +10,7 @@ module.exports = {
           components: './src/components',
           navigation: './src/navigation',
           features: './src/features',
+          assets: './src/assets',
         },
       },
     ],
