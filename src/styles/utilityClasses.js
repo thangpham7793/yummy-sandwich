@@ -1,6 +1,17 @@
-import { split, map, pipe, prop, tap, mergeAll, __, includes } from 'ramda'
+import {
+  values,
+  split,
+  map,
+  pipe,
+  prop,
+  tap,
+  mergeAll,
+  __,
+  includes,
+  mapObjIndexed,
+} from 'ramda'
 
-const fonts = {
+const Fonts = {
   HalantBold: 'Halant-Bold',
   HalantSemiBold: 'Halant-SemiBold',
   HennyPennyRegular: 'Henny-Penny-Regular',
@@ -11,34 +22,72 @@ const fonts = {
   NunitoLight: 'Nunito-Light',
 }
 
+const Colors = {
+  'primary-500': '#9BBD2E',
+  'primary-600': '#8DB600',
+  'secondary-100': '#FBF6ED',
+  'secondary-300': '#FFE4B6',
+  'secondary-500': '#F9AA33',
+  'secondary-700': '#FC8D00',
+  'base-300': '#C4C4C4',
+  'base-500': '#424242',
+  white: '#FFFFFF',
+  black: '#000000',
+  error: '#DC574C',
+  success: '#9CCC65',
+}
+
+export const makeColorUtilities = (colors = {}) => {
+  const utilityToNative = {
+    text: 'color',
+    bg: 'backgroundColor',
+    border: 'borderColor',
+  }
+
+  const takeValuesAndMergeAll = pipe(values, mergeAll)
+
+  return pipe(
+    mapObjIndexed((hexCode, color) =>
+      pipe(
+        mapObjIndexed((nativeKey, utility) => ({
+          [`${utility}-${color}`]: { [nativeKey]: hexCode },
+        })),
+        takeValuesAndMergeAll,
+      )(utilityToNative),
+    ),
+    takeValuesAndMergeAll,
+  )(colors)
+}
+
 const utilitiyClasses = {
   'fnt-title-bold': {
-    fontFamily: fonts.HalantBold,
+    fontFamily: Fonts.HalantBold,
   },
   'fnt-title-semibold': {
-    fontFamily: fonts.HalantSemiBold,
+    fontFamily: Fonts.HalantSemiBold,
   },
   'fnt-screen-title': {
-    fontFamily: fonts.HennyPennyRegular,
+    fontFamily: Fonts.HennyPennyRegular,
   },
   'fnt-text-light': {
-    fontFamily: fonts.NunitoLight,
+    fontFamily: Fonts.NunitoLight,
   },
   'fnt-text-reg': {
-    fontFamily: fonts.NunitoRegular,
+    fontFamily: Fonts.NunitoRegular,
   },
   'fnt-text-semibold': {
-    fontFamily: fonts.NunitoSemiBold,
+    fontFamily: Fonts.NunitoSemiBold,
   },
   'fnt-text-bold': {
-    fontFamily: fonts.NunitoBold,
+    fontFamily: Fonts.NunitoBold,
   },
   'fnt-text-extra-bold': {
-    fontFamily: fonts.NunitoExtraBold,
+    fontFamily: Fonts.NunitoExtraBold,
   },
   'text-center': {
     textAlign: 'center',
   },
+  ...makeColorUtilities(Colors),
 }
 
 const validateClassName = classNames => name => {

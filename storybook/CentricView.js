@@ -1,12 +1,11 @@
-import styled from 'styled-components/native'
+import { s, styled } from 'styles'
 
 import React from 'react'
 
-const Container = styled.View({
+const Container = styled.View(s('bg-base-500'), {
   flex: 1,
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: '#222',
 })
 
 const CentricView = ({ children }) => {
