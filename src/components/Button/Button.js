@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import { s } from 'styles'
 
 const ButtonContainer = styled.TouchableOpacity(
   {
@@ -9,11 +10,11 @@ const ButtonContainer = styled.TouchableOpacity(
   },
   ({ bgColor }) => ({
     backgroundColor: bgColor,
-  }),
+  })
 )
-const ButtonText = styled.Text({
+
+const ButtonText = styled.Text(s('text-center fnt-text-bold'), {
   fontSize: 16,
-  textAlign: 'center',
 })
 
 const PressableButton = ({ onPress, bgColor = 'orange', title }) => (

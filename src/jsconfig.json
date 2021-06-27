@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "components/*": ["./src/components/*"],
+            "navigation/*": ["./src/navigation/*"],
+            "styles/*": ["./src/styles/*"],
+            "assets/*": ["./src/assets/*"],
+            "features/*": ["./src/features/*"]
+        }
+    },
+    "exclude": ["node_modules", "babel.config.js", "setup.js"]
+}
