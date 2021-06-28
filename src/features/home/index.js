@@ -1,10 +1,6 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Page } from 'components'
 
 export default function Home() {
-  return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  )
+  return <Page isHome title="Yummy" />
 }

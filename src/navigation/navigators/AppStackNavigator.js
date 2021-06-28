@@ -13,7 +13,7 @@ const AppStackScreens = {
 const AppStack = createStackNavigator()
 export default function AppStackNavigator() {
   return (
-    <AppStack.Navigator headerMode="screen" initialRouteName={AppRoute.Home}>
+    <AppStack.Navigator headerMode="none" initialRouteName={AppRoute.Home}>
       {registerScreens(AppStackScreens, AppStack)}
     </AppStack.Navigator>
   )
