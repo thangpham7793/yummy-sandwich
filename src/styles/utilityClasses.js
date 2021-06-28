@@ -14,7 +14,7 @@ import {
 const Fonts = {
   HalantBold: 'Halant-Bold',
   HalantSemiBold: 'Halant-SemiBold',
-  HennyPennyRegular: 'Henny-Penny-Regular',
+  HennyPennyRegular: 'HennyPenny-Regular',
   NunitoExtraBold: 'Nunito-ExtraBold',
   NunitoBold: 'Nunito-Bold',
   NunitoSemiBold: 'Nunito-SemiBold',
@@ -86,6 +86,25 @@ const utilitiyClasses = {
   },
   'text-center': {
     textAlign: 'center',
+  },
+  flex: {
+    display: 'flex',
+  },
+  'flex-1': {
+    flex: 1,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  column: {
+    flexDirection: 'column',
+  },
+  'show-box': {
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  'ml-10': {
+    marginLeft: 40,
   },
   ...makeColorUtilities(Colors),
 }
