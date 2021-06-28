@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Catering from 'features/catering'
 import Home from 'features/home'
+import SchoolLunch from 'features/schoolLunch'
 import React from 'react'
 import AppRoute from '../routes'
 import MenuStackNavigator from './MenuStackNavigator'
-import ProfileStackNavigator from './ProfileStackNavigator'
 import { registerScreens } from './utils'
 
 const TabRoutes = {
@@ -14,8 +14,8 @@ const TabRoutes = {
   [AppRoute.Catering]: {
     component: Catering,
   },
-  [AppRoute.Profile]: {
-    component: ProfileStackNavigator,
+  [AppRoute.SchoolLunch]: {
+    component: SchoolLunch,
   },
   [AppRoute.Menu]: {
     component: MenuStackNavigator,

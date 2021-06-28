@@ -1,10 +1,6 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Page } from 'components'
 
 export default function Catering() {
-  return (
-    <View>
-      <Text>Catering</Text>
-    </View>
-  )
+  return <Page title="Catering" />
 }

@@ -5,6 +5,7 @@ const AppRoute = {
   CheckOut: 'CheckOut',
   Profile: 'Profile',
   Catering: 'Catering',
+  SchoolLunch: 'SchoolLunch',
 }
 
 export default AppRoute

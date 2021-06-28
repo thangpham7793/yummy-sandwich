@@ -13,7 +13,7 @@ const MenuStackScreens = {
 const MenuStack = createStackNavigator()
 export default function MenuStackNavigator() {
   return (
-    <MenuStack.Navigator headerMode="screen" initialRouteName={AppRoute.Menu}>
+    <MenuStack.Navigator headerMode="none" initialRouteName={AppRoute.Menu}>
       {registerScreens(MenuStackScreens, MenuStack)}
     </MenuStack.Navigator>
   )
