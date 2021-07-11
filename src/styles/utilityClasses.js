@@ -9,6 +9,7 @@ import {
   __,
   includes,
   mapObjIndexed,
+  range,
 } from 'ramda'
 
 const Fonts = {
@@ -59,6 +60,16 @@ export const makeColorUtilities = (colors = {}) => {
   )(colors)
 }
 
+export const makeUnitBasedUtilities = (util, native, baseUnit = 4) => {
+  return range(0, 201).reduce(
+    (acc, val) => ({
+      ...acc,
+      [`${util}-${val}`]: { [native]: val * baseUnit },
+    }),
+    {},
+  )
+}
+
 const utilitiyClasses = {
   'fnt-title-bold': {
     fontFamily: Fonts.HalantBold,
@@ -106,7 +117,30 @@ const utilitiyClasses = {
   'ml-10': {
     marginLeft: 40,
   },
+  'rounded-l': {
+    borderRadius: 80,
+  },
+  'rounded-m': {
+    borderRadius: 40,
+  },
+  'rounded-s': {
+    borderRadius: 20,
+  },
+  'box-shadow-l': {
+    boxShadow: '0px 4px 6px #FFFFFF',
+  },
   ...makeColorUtilities(Colors),
+  ...makeUnitBasedUtilities('w', 'width'),
+  ...makeUnitBasedUtilities('h', 'height'),
+  ...makeUnitBasedUtilities('fs', 'fontSize', 2),
+  ...makeUnitBasedUtilities('pt', 'paddingTop'),
+  ...makeUnitBasedUtilities('pr', 'paddingRight'),
+  ...makeUnitBasedUtilities('pb', 'paddingBottom'),
+  ...makeUnitBasedUtilities('pl', 'paddingLeft'),
+  ...makeUnitBasedUtilities('mt', 'marginTop'),
+  ...makeUnitBasedUtilities('mr', 'marginRight'),
+  ...makeUnitBasedUtilities('mb', 'marginBottom'),
+  ...makeUnitBasedUtilities('ml', 'marginLeft'),
 }
 
 const validateClassName = classNames => name => {
