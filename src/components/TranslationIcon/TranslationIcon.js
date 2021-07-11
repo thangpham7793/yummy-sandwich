@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Svg, { Path, Defs, Pattern, Use, Image } from 'react-native-svg'
 
-function TranslationIcon({ width = 45, height = 37, ...props }) {
+export default ({ width = 45, height = 37, ...props }) => {
   return (
     <Svg
       width={width}
@@ -36,5 +36,3 @@ function TranslationIcon({ width = 45, height = 37, ...props }) {
     </Svg>
   )
 }
-
-export default TranslationIcon

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Svg, { Path } from 'react-native-svg'
 
-const BackArrowIcon = ({ width = 40, height = 28, ...props }) => {
+export default ({ width = 40, height = 28, ...props }) => {
   return (
     <Svg
       width={width}
@@ -17,5 +17,3 @@ const BackArrowIcon = ({ width = 40, height = 28, ...props }) => {
     </Svg>
   )
 }
-
-export default BackArrowIcon

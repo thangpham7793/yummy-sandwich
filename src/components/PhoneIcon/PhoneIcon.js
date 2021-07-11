@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Svg, { Path } from 'react-native-svg'
 
-const PhoneIcon = ({ width = 40, height = 40, ...props }) => {
+export default ({ width = 40, height = 40, ...props }) => {
   return (
     <Svg
       width={width}
@@ -18,5 +18,3 @@ const PhoneIcon = ({ width = 40, height = 40, ...props }) => {
     </Svg>
   )
 }
-
-export default PhoneIcon
