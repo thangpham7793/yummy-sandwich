@@ -12,7 +12,8 @@
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "new:component": "hygen component new"
+    "new:component": "hygen component new",
+    "new:icon": "hygen component new:icon"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
