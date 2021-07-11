@@ -11,7 +11,7 @@ const AppStackScreens = {
 }
 
 const AppStack = createStackNavigator()
-export default function AppStackNavigator() {
+export default () => {
   return (
     <AppStack.Navigator headerMode="none" initialRouteName={AppRoute.Home}>
       {registerScreens(AppStackScreens, AppStack)}

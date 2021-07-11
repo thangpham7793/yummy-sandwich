@@ -1,6 +1,6 @@
 import React from 'react'
-import { Page } from 'components'
+import Page from 'components/Page'
 
-export default function SchoolLunch() {
+export default () => {
   return <Page title="School Lunch" />
 }

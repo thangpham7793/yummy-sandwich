@@ -8,8 +8,6 @@ const Container = styled.View(s('bg-base-500'), {
   justifyContent: 'center',
 })
 
-const CentricView = ({ children }) => {
+export default ({ children }) => {
   return <Container>{children}</Container>
 }
-
-export default CentricView

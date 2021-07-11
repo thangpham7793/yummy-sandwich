@@ -1,6 +1,6 @@
-import { Page } from 'components'
+import Page from 'components/Page'
 import React from 'react'
 
-export default function Menu() {
+export default () => {
   return <Page title="Menu" />
 }

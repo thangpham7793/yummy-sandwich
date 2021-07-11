@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-export default function CheckOut() {
+export default () => {
   return (
     <View>
       <Text>CheckOut</Text>

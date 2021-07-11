@@ -11,7 +11,7 @@ const ProfileStackScreens = {
 }
 
 const ProfileStack = createStackNavigator()
-export default function MenuStackNavigator() {
+export default () => {
   return (
     <ProfileStack.Navigator
       headerMode="screen"

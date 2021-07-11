@@ -23,7 +23,7 @@ const TabRoutes = {
 }
 
 const Tab = createBottomTabNavigator()
-export default function FooterTabNavigator() {
+export default () => {
   return (
     <Tab.Navigator initialRouteName={AppRoute.Home}>
       {registerScreens(TabRoutes, Tab)}
