@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= Name %>/<%= Name %>.js
+to: src/components/<%= Name %>/index.js
 ---
 import React from 'react'
 import { s, styled } from 'styles'
@@ -7,9 +7,8 @@ import { s, styled } from 'styles'
 const Container = styled.View({})
 const Text = styled.Text({})
 
-const <%= Name %> = () => (
+export default () => (
   <Container>
     <Text><%= Name %></Text>
   </Container>
 )
-export default <%= Name %>

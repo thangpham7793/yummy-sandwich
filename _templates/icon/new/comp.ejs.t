@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= Name %>Icon/<%= Name %>Icon.js
+to: src/components/<%= Name %>Icon/index.js
 ---
 import * as React from 'react'
 import Svg, { Path } from 'react-native-svg'
