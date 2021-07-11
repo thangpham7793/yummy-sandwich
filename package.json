@@ -13,7 +13,7 @@
     "build-storybook": "build-storybook",
     "prepare": "husky install",
     "new:component": "hygen component new",
-    "new:icon": "hygen component new:icon"
+    "new:icon": "hygen icon new"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",

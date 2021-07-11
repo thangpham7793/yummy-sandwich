@@ -4,4 +4,4 @@ inject: true
 append: true
 ---
 
-export { default as <%= Name %> } from './<%= Name %>'
+export { default as <%= Name %>Icon } from './<%= Name %>Icon'
