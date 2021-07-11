@@ -6,6 +6,7 @@ import UserCircle from 'components/UserCircle'
 import PhoneIconBase from 'components/PhoneIcon'
 import TranslationIconBase from 'components/TranslationIcon'
 import BackArrowIconBase from 'components/BackArrowIcon'
+import HorizontalScrollView from 'components/HorizontalScrollView'
 
 const Container = styled.View(
   s('flex flex-1 bg-base-500'),
@@ -14,6 +15,7 @@ const Container = styled.View(
       backgroundColor: bgColor,
     },
 )
+const PaddingContainer = styled.View(s('mt-28'))
 
 const { width } = Dimensions.get('window')
 
@@ -65,13 +67,16 @@ const Page = ({
   if (titleOnly) {
     return (
       <Container bgColor={bgColor}>
+        <PaddingContainer />
         <HeaderContainer>
           <TextContainer>
             <HeaderText style={s('text-center')}>{title}</HeaderText>
           </TextContainer>
         </HeaderContainer>
         <Curve />
-        <SafeAreaView>{children}</SafeAreaView>
+        <SafeAreaView>
+          <HorizontalScrollView>{children}</HorizontalScrollView>
+        </SafeAreaView>
       </Container>
     )
   }
@@ -79,6 +84,7 @@ const Page = ({
   if (isHome) {
     return (
       <Container bgColor={bgColor}>
+        <PaddingContainer />
         <HeaderContainer>
           <IconButton style={{ flex: 0.8 }}>
             <PhoneIcon />
@@ -96,7 +102,9 @@ const Page = ({
           </IconButton>
         </HeaderContainer>
         <Curve />
-        <SafeAreaView>{children}</SafeAreaView>
+        <SafeAreaView>
+          <HorizontalScrollView>{children}</HorizontalScrollView>
+        </SafeAreaView>
       </Container>
     )
   }
@@ -104,6 +112,7 @@ const Page = ({
   if (!showUserAccount) {
     return (
       <Container bgColor={bgColor}>
+        <PaddingContainer />
         <HeaderContainer>
           <IconButton onPress={goBack} style={{ flex: 0.5, marginLeft: 24 }}>
             {showBackArrow && <BackArrowIcon />}
@@ -116,13 +125,16 @@ const Page = ({
           </IconButton>
         </HeaderContainer>
         <Curve />
-        <SafeAreaView>{children}</SafeAreaView>
+        <SafeAreaView>
+          <HorizontalScrollView>{children}</HorizontalScrollView>
+        </SafeAreaView>
       </Container>
     )
   }
 
   return (
     <Container bgColor={bgColor}>
+      <PaddingContainer />
       <HeaderContainer>
         <IconButton onPress={goBack}>
           {showBackArrow && <BackArrowIcon />}
@@ -135,7 +147,9 @@ const Page = ({
         </IconButton>
       </HeaderContainer>
       <Curve />
-      <SafeAreaView>{children}</SafeAreaView>
+      <SafeAreaView>
+        <HorizontalScrollView>{children}</HorizontalScrollView>
+      </SafeAreaView>
     </Container>
   )
 }
