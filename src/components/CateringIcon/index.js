@@ -6,7 +6,7 @@ export default ({ width = 45, height = 40, stroke = '#fff', ...props }) => {
     <Svg
       width={width}
       height={height}
-      viewBox="0 0 53 24"
+      viewBox="0 -3 53 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
       {...props}>
