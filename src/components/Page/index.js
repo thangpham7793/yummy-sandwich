@@ -7,6 +7,7 @@ import PhoneIconBase from 'components/PhoneIcon'
 import TranslationIconBase from 'components/TranslationIcon'
 import BackArrowIconBase from 'components/BackArrowIcon'
 import HorizontalScrollView from 'components/HorizontalScrollView'
+import { useNavigation } from '@react-navigation/native'
 
 const Container = styled.View(
   s('flex flex-1 bg-base-500'),
@@ -60,10 +61,11 @@ export default ({
   isHome = false,
   showUserAccount = true,
   showBackArrow = true,
-  goBack = () => {},
   goToAccount = () => {},
   titleOnly = false,
 }) => {
+  const navigation = useNavigation()
+  const goBack = () => navigation.goBack()
   if (titleOnly) {
     return (
       <Container bgColor={bgColor}>

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import DrinkIcon from 'components/DrinkIcon'
 import PaniniIcon from 'components/PaniniIcon'
 import SaladIcon from 'components/SaladIcon'
@@ -7,7 +8,7 @@ import WrapsIcon from 'components/WrapsIcon'
 import React from 'react'
 import { s, styled } from 'styles'
 
-const Container = styled.View(
+const Container = styled.TouchableOpacity(
   s('flex w-24 h-35 bg-white rounded-m box-shadow-l'),
   {
     borderWidth: 2,
@@ -34,9 +35,12 @@ const cardProps = {
 
 export default ({ category, ...props }) => {
   const { Icon, name } = cardProps[category]
+  const navigation = useNavigation()
+  const onPress = () =>
+    navigation.jumpTo('Menu', { screen: 'Menu', params: { category } })
 
   return (
-    <Container {...props}>
+    <Container {...props} onPress={onPress}>
       <Icon />
       <Text>{name}</Text>
     </Container>
